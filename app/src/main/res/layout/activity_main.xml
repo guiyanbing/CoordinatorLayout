@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <ImageView android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="?attr/colorPrimary"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+        <!-- 如果TabLayout 加这属性会划出 app:layout_scrollFlags="scroll|enterAlways" -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/colorPrimary"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabIndicatorHeight="4dp"
+            app:tabSelectedTextColor="#000"
+            app:tabTextColor="#fff"/>
+
+        <LinearLayout
+            android:id="@+id/top_container"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:minHeight="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="top"
+            app:layout_collapseMode="pin"
+            android:background="#ff0000">
+
+            <RadioGroup
+                android:layout_width="261dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_centerInParent="true">
+
+                <RadioButton
+                    android:background="@drawable/title_left_shape"
+                    android:padding="6dp"
+                    android:textColor="@color/top_layout_text_color_selector"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="单程" />
+
+                <RadioButton
+                    android:background="@drawable/title_center_shape"
+                    android:padding="6dp"
+                    android:textColor="@color/top_layout_text_color_selector"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:button="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginRight="-1dp"
+                    android:text="往返" />
+
+                <RadioButton
+                    android:background="@drawable/title_right_shape"
+                    android:padding="6dp"
+                    android:button="@null"
+                    android:textColor="@color/top_layout_text_color_selector"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="多程"
+                    android:visibility="visible" />
+            </RadioGroup>
+        </LinearLayout>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/search_bg"
+            android:scaleType="fitStart"/>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
